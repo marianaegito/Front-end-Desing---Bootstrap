@@ -26,59 +26,91 @@
 </head>
 <body>
    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Monitoramento de Sistemas</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Servidores</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Alertas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Configurações</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Uso de CPU</h5>
-        <p class="card-text">O uso de CPU é equivalente a 65%.</p>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="sidebarMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Alertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Uso de Memória</h5>
-        <p class="card-text">O uso de Memória é equivalente a 4GB / 8GB.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Espaço em Disco</h5>
-        <p class="card-text">O Espaço Disco é aquivalente a 250GB / 500GB.</p>
-      </div>
-    </div>
-  </div>
+  </nav>
 
-<div class="card chart-container">
+  <div class="container mt-4">
+
+    <div class="row">
+      <div class="col-md-4 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">CPU</h5>
+            <p class="card-text">Uso atual: 65%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Memória</h5>
+            <p class="card-text">Uso atual: 72%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Rede</h5>
+            <p class="card-text">Latência: 20ms</p>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="card chart-container">
   <canvas id="chart"></canvas>
 </div>
+
+ 
+
+<h3 class="mt-4">Alertas</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Data/Hora</th>
+      <th scope="col">Servidor</th>
+      <th scope="col">Mensagem</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <td>21/08/2025 22:15</td>
+      <td>Servidor-01</td>
+      <td>CPU acima de 90%</td>
+      <td><span class="badge bg-danger">Crítico</span></td>
+    </tr>
+    <tr>
+      <td>21/08/2025 21:50</td>
+      <td>Servidor-02</td>
+      <td>Memória em 75%</td>
+      <td><span class="badge bg-warning">Alerta</span></td>
+    </tr>
+    <tr>
+      <td>21/08/2025 20:30</td>
+      <td>Servidor-03</td>
+      <td>Conexão estável</td>
+      <td><span class="badge bg-success">Normal</span></td>
+    </tr>
+  </tbody>
+</table>
+
 
     <!-- JS  (opicional, para componentes interativos) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
